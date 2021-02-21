@@ -1,5 +1,5 @@
 {
-  "name": "Vue3Lab",
+  "name": "lab-vue3",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -17,6 +17,7 @@
     "@vue/compiler-sfc": "^3.0.5",
     "@vuedx/typecheck": "^0.6.0",
     "@vuedx/typescript-plugin-vue": "^0.6.0",
+    "sass": "^1.32.8",
     "typescript": "^4.1.3",
     "vite": "^2.0.0"
   }
