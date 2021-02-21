@@ -253,6 +253,11 @@
   dependencies:
     "@types/braces" "*"
 
+"@types/node@^14.14.31":
+  version "14.14.31"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.31.tgz?cache=0&sync_timestamp=1613757947683&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
+  integrity sha1-cihr0z0TeqDRUtR+x8F2JWPTQFU=
+
 "@vitejs/plugin-vue@^1.1.4":
   version "1.1.4"
   resolved "https://registry.npm.taobao.org/@vitejs/plugin-vue/download/@vitejs/plugin-vue-1.1.4.tgz#1dd388519b75439b7733601b55238ca691864796"
