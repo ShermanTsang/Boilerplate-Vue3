@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import Utils from './utils'
+import Utils from './plugins/utils'
 
 const app = createApp(App)
 
