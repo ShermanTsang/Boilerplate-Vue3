@@ -1,8 +1,8 @@
-<style>
+<style lang="scss">
 </style>
 
 <template>
-  <h1>Welcome to Index page!</h1>
+  <div class="p-2">Welcome to Index page!</div>
 </template>
 
 <script lang="ts">
