@@ -7,6 +7,9 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@types/qs": "^6.9.6",
+    "axios": "^0.21.1",
+    "qs": "^6.9.6",
     "vue": "^3.0.5",
     "vue-router": "4",
     "vuex": "^4.0.0"
