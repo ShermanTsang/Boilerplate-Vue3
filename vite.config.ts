@@ -20,5 +20,14 @@ export default defineConfig({
                 additionalData: `@import "./src/assets/styles/global.scss";`
             }
         }
+    },
+    server: {
+        proxy: {
+            '/api': {
+                target: 'https://api.share-man.com/v1/',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, '')
+            },
+        }
     }
 })
