@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite-plugin-windicss'
+import formsPlugin from 'windicss/plugin/forms'
 
 export default defineConfig({
     darkMode: 'class',
@@ -8,4 +9,5 @@ export default defineConfig({
             },
         },
     },
+    plugins: [formsPlugin],
 })
