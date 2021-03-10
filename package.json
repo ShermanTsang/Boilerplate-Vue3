@@ -2,13 +2,14 @@
   "name": "lab-vue3",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vuedx-typecheck . && vite build",
+    "dev": "cross-env NODE_ENV=development vite",
+    "build": "cross-env NODE_ENV=production vuedx-typecheck . && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
     "@types/qs": "^6.9.6",
     "axios": "^0.21.1",
+    "qs": "^6.9.6",
     "vue": "^3.0.5",
     "vue-router": "4",
     "vuex": "^4.0.0"
@@ -19,6 +20,7 @@
     "@vue/compiler-sfc": "^3.0.5",
     "@vuedx/typecheck": "^0.6.0",
     "@vuedx/typescript-plugin-vue": "^0.6.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.21.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-alias": "^1.1.2",
