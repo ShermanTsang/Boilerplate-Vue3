@@ -1,3 +1,5 @@
+/** @format */
+
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
@@ -17,17 +19,17 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                additionalData: `@import "./src/assets/styles/global.scss";`
-            }
-        }
+                additionalData: `@import "./src/assets/styles/global.scss";`,
+            },
+        },
     },
     server: {
         proxy: {
             '/api': {
                 target: 'https://api.share-man.com/v1/',
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, '')
+                rewrite: path => path.replace(/^\/api/, ''),
             },
-        }
-    }
+        },
+    },
 })
