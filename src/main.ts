@@ -1,4 +1,6 @@
-import { createApp } from 'vue'
+/** @format */
+
+import {createApp} from 'vue'
 import App from '/@/App.vue'
 import Router from '/@/router'
 import Store from '/@/store'
@@ -8,9 +10,4 @@ import '@virtual/windi.css'
 
 const app = createApp(App)
 
-app
-    .use(Router)
-    .use(Store)
-    .use(Utils)
-    .use(Axios)
-    .mount('#app')
+app.use(Router).use(Store).use(Utils).use(Axios).mount('#app')

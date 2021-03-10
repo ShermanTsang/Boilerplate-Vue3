@@ -1,3 +1,5 @@
+/** @format */
+
 import {ComponentCustomProperties} from 'vue'
 import {Store} from 'vuex'
 
