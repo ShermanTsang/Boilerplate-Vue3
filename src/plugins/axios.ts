@@ -1,25 +1,25 @@
 /** @format */
 
-import axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
-import {App} from 'vue'
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+import { App } from 'vue'
 import qs from 'qs'
 
 const config = {
     baseURL: '/api',
     timeout: 1000,
-    headers: {'X-Custom-Header': 'foobar'},
+    headers: { 'X-Custom-Header': 'foobar' },
 }
 
 const instance = axios.create(config)
 
 axios.interceptors.request.use(
     (config: AxiosRequestConfig) => config,
-    error => Promise.reject(error),
+    (error) => Promise.reject(error),
 )
 
 axios.interceptors.response.use(
     (response: AxiosResponse) => response,
-    error => Promise.reject(error.message),
+    (error) => Promise.reject(error.message),
 )
 
 declare interface Api {
@@ -42,10 +42,10 @@ export default {
                         .get(url, {
                             params,
                         })
-                        .then(res => {
+                        .then((res) => {
                             resolve(res.data)
                         })
-                        .catch(err => {
+                        .catch((err) => {
                             reject(err.data)
                         })
                 })
@@ -54,10 +54,10 @@ export default {
                 return new Promise((resolve, reject) => {
                     instance
                         .post(url, qs.stringify(params))
-                        .then(res => {
+                        .then((res) => {
                             resolve(res.data)
                         })
-                        .catch(err => {
+                        .catch((err) => {
                             reject(err.data)
                         })
                 })

@@ -1,6 +1,6 @@
 /** @format */
 
-import {App} from 'vue'
+import { App } from 'vue'
 
 declare interface Utils {
     addN: (n: number) => number

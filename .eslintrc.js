@@ -10,7 +10,9 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['vue', '@typescript-eslint'],
-    rules: {},
+    rules: {
+        '@typescript-eslint/no-var-requires': 0,
+    },
     overrides: [
         {
             files: ['*.vue'],

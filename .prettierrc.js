@@ -1,8 +1,8 @@
-module.exports =  {
+module.exports = {
     // 一行最多字符数量
     printWidth: 120,
-    // 使用 2 个空格缩进
-    tabWidth: 2,
+    // 使用 4 个空格缩进
+    tabWidth: 4,
     // 不使用缩进符，而使用空格
     useTabs: false,
     // 行尾分号

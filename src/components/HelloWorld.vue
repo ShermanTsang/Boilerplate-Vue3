@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts">
-import {ref, defineComponent} from 'vue'
+import { ref, defineComponent } from 'vue'
 
 export default defineComponent({
     name: 'HelloWorld',
@@ -57,7 +57,7 @@ export default defineComponent({
         const count = ref(0)
         const useScriptSetup = ref(false)
         const useTsPlugin = ref(false)
-        return {count, useScriptSetup, useTsPlugin}
+        return { count, useScriptSetup, useTsPlugin }
     },
 })
 </script>
