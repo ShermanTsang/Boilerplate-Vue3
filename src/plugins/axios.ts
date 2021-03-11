@@ -4,13 +4,13 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 import { App } from 'vue'
 import qs from 'qs'
 
-const config = {
-    baseURL: '/api',
+const settings = {
+    baseURL: import.meta.env.VITE_API_BASEURL,
     timeout: 1000,
     headers: { 'X-Custom-Header': 'foobar' },
 }
 
-const instance = axios.create(config)
+const instance = axios.create(settings)
 
 axios.interceptors.request.use(
     (config: AxiosRequestConfig) => config,
