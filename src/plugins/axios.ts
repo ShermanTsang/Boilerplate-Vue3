@@ -6,7 +6,7 @@ import qs from 'qs'
 
 const settings = {
     baseURL: import.meta.env.VITE_API_BASEURL,
-    timeout: 1000,
+    timeout: 10000,
     headers: { 'X-Custom-Header': 'foobar' },
 }
 
@@ -23,8 +23,8 @@ axios.interceptors.response.use(
 )
 
 declare interface Api {
-    get: (path: string) => any
-    post: (path: string) => any
+    get: (path: string, params: any) => any
+    post: (path: string, params: any) => any
 }
 
 declare module '@vue/runtime-core' {

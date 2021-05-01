@@ -1,6 +1,6 @@
 /** @format */
 
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
 import path from 'path'
@@ -28,7 +28,7 @@ export default defineConfig({
             '/api': {
                 target: 'https://api.share-man.com/v1/',
                 changeOrigin: true,
-                rewrite: path => path.replace(/^\/api/, ''),
+                rewrite: (path) => path.replace(/^\/api/, ''),
             },
         },
     },
