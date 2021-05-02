@@ -5,12 +5,21 @@ import { App } from 'vue'
 import qs from 'qs'
 
 const settings = {
-    baseURL: import.meta.env.VITE_API_BASEURL,
-    timeout: 10000,
-    headers: { 'X-Custom-Header': 'foobar' },
+    backend: {
+        baseURL: import.meta.env.VITE_API_BACKEND_BASEURL,
+        timeout: 10000,
+        headers: { 'X-Custom-Header': 'foobar' },
+    },
 }
 
-const instance = axios.create(settings)
+const instance: AxiosInstance = {
+    backend: axios.create(settings.backend),
+}
+
+// instance.backend.interceptors.request.use(
+//     (config: AxiosRequestConfig) => config,
+//     (error: any) => Promise.reject(error),
+// )
 
 axios.interceptors.request.use(
     (config: AxiosRequestConfig) => config,
@@ -23,8 +32,10 @@ axios.interceptors.response.use(
 )
 
 declare interface Api {
-    get: (path: string, params: any) => any
-    post: (path: string, params: any) => any
+    (instanceName: string): {
+        get: (path: string, params: any) => any
+        post: (path: string, params: any) => any
+    }
 }
 
 declare module '@vue/runtime-core' {
@@ -35,33 +46,35 @@ declare module '@vue/runtime-core' {
 
 export default {
     install(app: App) {
-        app.config.globalProperties.$api = {
-            get(url: string, params: any): any {
-                return new Promise((resolve, reject) => {
-                    instance
-                        .get(url, {
-                            params,
-                        })
-                        .then((res) => {
-                            resolve(res.data)
-                        })
-                        .catch((err) => {
-                            reject(err.data)
-                        })
-                })
-            },
-            post(url: string, params: any): any {
-                return new Promise((resolve, reject) => {
-                    instance
-                        .post(url, qs.stringify(params))
-                        .then((res) => {
-                            resolve(res.data)
-                        })
-                        .catch((err) => {
-                            reject(err.data)
-                        })
-                })
-            },
+        app.config.globalProperties.$api = (instanceName: string) => {
+            return {
+                get(url: string, params: any): any {
+                    return new Promise((resolve, reject) => {
+                        instance[instanceName]
+                            .get(url, {
+                                params,
+                            })
+                            .then((res: { data: unknown }) => {
+                                resolve(res.data)
+                            })
+                            .catch((err: { data: any }) => {
+                                reject(err.data)
+                            })
+                    })
+                },
+                post(url: string, params: any): any {
+                    return new Promise((resolve, reject) => {
+                        instance[instanceName]
+                            .post(url, qs.stringify(params))
+                            .then((res: { data: unknown }) => {
+                                resolve(res.data)
+                            })
+                            .catch((err: { data: any }) => {
+                                reject(err.data)
+                            })
+                    })
+                },
+            }
         }
     },
 }

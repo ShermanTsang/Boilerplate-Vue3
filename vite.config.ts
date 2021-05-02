@@ -25,10 +25,10 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '/api': {
-                target: 'https://api.share-man.com/v1/',
+            '/api@backend': {
+                target: 'https://api.example.com/v1/',
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ''),
+                rewrite: (path) => path.replace(/^\/api@backend/, ''),
             },
         },
     },

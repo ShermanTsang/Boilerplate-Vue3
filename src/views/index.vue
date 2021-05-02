@@ -13,13 +13,13 @@ import { defineComponent, getCurrentInstance, reactive, onMounted, toRefs } from
 export default defineComponent({
     name: 'Index',
     setup() {
-        const { ctx } = getCurrentInstance()
+        const { proxy } = getCurrentInstance()
         const state = reactive({
             text: 'vue',
             array: {},
         })
         onMounted(async () => {
-            const res = await ctx.$api.get('/common/timeline', { name: 1 })
+            const res = await proxy.$api('backend').get('/test', { name: 1 })
             state.array = res.data
         })
         return { ...toRefs(state) }
