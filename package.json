@@ -33,7 +33,8 @@
     "typescript": "^4.2.3",
     "typescript-eslint-parser": "^22.0.0",
     "vite": "^2.0.0",
-    "vite-plugin-windicss": "^0.7.1",
-    "vue-eslint-parser": "^7.6.0"
+    "vite-plugin-windicss": "^0.15.10",
+    "vue-eslint-parser": "^7.6.0",
+    "windicss": "^2.5.14"
   }
 }

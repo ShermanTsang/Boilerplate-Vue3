@@ -6,7 +6,7 @@ import Router from '/@/router'
 import Store from '/@/store'
 import Utils from '/@plugins/utils'
 import Axios from '/@plugins/axios'
-import '@virtual/windi.css'
+import 'virtual:windi.css'
 
 const app = createApp(App)
 

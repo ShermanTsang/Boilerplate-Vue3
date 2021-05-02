@@ -1,6 +1,6 @@
 /** @format */
 
-import {defineConfig} from 'vite-plugin-windicss'
+import { defineConfig } from 'windcss/helpers'
 import formsPlugin from 'windicss/plugin/forms'
 
 export default defineConfig({
